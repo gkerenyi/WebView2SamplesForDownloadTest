@@ -249,17 +249,12 @@ found in the LICENSE file.
             </TextBox>
         </DockPanel>
         <Grid x:Name="Layout">
-            <Grid.Background>
-                <ImageBrush ImageSource="/assets/AppStartPageBackground.png" />
-            </Grid.Background>
-
             <!-- If you want to use a specific version of WebView2 Runtime change EvergreenWebView2CreationProperties
             to BYOWebView2CreationProperties and follow the steps in MainWindow.xaml
             -->
             <wv2:WebView2
                 x:Name="webView"
                 CreationProperties="{StaticResource EvergreenWebView2CreationProperties}"
-                Source="https://www.bing.com/"
             />
             <!-- The control event handlers are set in code behind so they can be reused when replacing the control after
             a WebView2 Runtime's browser process failure

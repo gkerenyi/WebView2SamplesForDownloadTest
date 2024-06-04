@@ -237,6 +237,13 @@ namespace WebView2WpfBrowser
             // Set background transparent
             webView.DefaultBackgroundColor = System.Drawing.Color.Transparent;
             await webView.EnsureCoreWebView2Async();
+
+            WebViewSettings.IsReputationCheckingRequired = false;
+            webView.CoreWebView2.DownloadStarting += WebView_DownloadStarting;
+        }
+
+        void WebView_DownloadStarting(object sender, CoreWebView2DownloadStartingEventArgs e)
+        {
         }
 
         void AttachControlEventHandlers(WebView2 control)
